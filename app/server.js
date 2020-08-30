@@ -19,6 +19,9 @@ app.get('/lastreport', function(req, res) {
 app.post('/generate', (req, res) => {
     var jsonData = JSON.stringify(req.body); // TODO create reports
     // TODO copy text to clipboard https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
+    var object = JSON.parse(jsonData);
+    console.log(req.body.comments);
+    // TODO put in report not json
     fs.writeFile("backup.txt", jsonData, function(err) {
         if (err) {
             console.log(err);

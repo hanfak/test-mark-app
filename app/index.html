@@ -7,13 +7,32 @@
   <body>
     Hello
     <form action="/generate" method="post">
-      <!-- Add radio buttons for likart -->
-      <!-- Add text field for user input -->
-      <label for="fname">First name:</label><br>
-      <input type="text" id="fname" name="fname" value="John"><br>
+      <label class="statement">This HTML Likert scale is easy to use.</label>
+      <ul class='likert'>
+        <li>
+          <input type="radio" name="likert" value="strongly agree">
+          <label>Strongly agree</label>
+        </li>
+        <li>
+          <input type="radio" name="likert" value="agree">
+          <label>Agree</label>
+        </li>
+        <li>
+          <input type="radio" name="likert" value="neutral">
+          <label>Neutral</label>
+        </li>
+        <li>
+          <input type="radio" name="likert" value="disagree">
+          <label>Disagree</label>
+        </li>
+        <li>
+          <input type="radio" name="likert" value="strongly disagree">
+          <label>Strongly disagree</label>
+        </li>
+      </ul>
 
-      <label for="lname">Last name:</label><br>
-      <input type="text" id="lname" name="lname" value="Doe"><br><br>
+      <label for="comments">extra comments:</label><br>
+      <textarea rows="20" cols="50" type="text" id="comments" name="comments" value=""></textarea><br>
 
       <input type="submit" value="Submit">
     </form>

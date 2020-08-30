@@ -1,8 +1,8 @@
-## Instructions 
+## Instructions
 
-### run app locally 
+### run app locally
 
-### build docker image 
+### build docker image
 
 ### Run docker image
 
@@ -42,8 +42,6 @@ push to artifactory
 
 ## Docker
 
-Use node base image (fozzie old) ??
-slim down docker image (current 997MB) https://learnk8s.io/blog/smaller-docker-images
-
 docker build -t nodeapp .
 docker run -d --name nodeapp -p 8231:9999 nodeapp
+docker exec -ti nodeapp sh
