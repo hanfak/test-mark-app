@@ -2,14 +2,25 @@
 
 ### run app locally
 
+npm install
+npm run app
+
 ### build docker image
 
+docker build -t testMarkerReporter .
+
 ### Run docker image
+
+docker run -d --name testMarkerReporter -p 8231:9999 testMarkerReporter
+
+### Access container
+
+docker exec -ti testMarkerReporter sh
 
 ## GET /
 Return index.html
 Contains form with submit button, and reset button
-Populate field with back up
+Populate field with back up (*)
 
 ## POST /generate
 Returns text of readable assesment
@@ -19,6 +30,8 @@ Link to pass or fail, return generic response (with copy button)
 
 ## GET /backup
 return backup text
+button to form
+button to generate report
 
 ## index.html
 Add some styling (bootstrap), text box of appropriate size
@@ -37,11 +50,9 @@ copy when happy and paste in form
 location of last backup is ...
 
 ## Teamcity
+git trigger
 build image
 push to artifactory
 
 ## Docker
 
-docker build -t nodeapp .
-docker run -d --name nodeapp -p 8231:9999 nodeapp
-docker exec -ti nodeapp sh
