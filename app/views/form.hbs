@@ -1,21 +1,27 @@
-<h1>Fill form while marking</h1>
+<h1 class="title">Fill form while marking</h1>
 <form action="/generate" method="post">
   {{#each post.statement}}
-    <label class="statement">{{inc @index}}: {{this.value}} blahs</label>
-    <ul class={{this.key}}>
-      {{#each ../post.likarts}}
-        <li>
-          <label><input type="radio" name={{../this.key}} value={{this}}>{{replace this}}</label>
-        </li>
-      {{/each}}
-    </ul>
+    <label class="statement">{{inc @index}}. {{this.value}} blahs</label>
+      <ul class={{this.key}}>
+        {{#each ../post.likarts}}
+          <li style="margin-right: 10px">
+            <label><input style="margin-right: 10px" type="radio" name={{../this.key}} value={{this}}>{{replace this}}</label>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
   {{/each}}
-  <label for="comments">extra comments:</label>
   <br>
-  <textarea rows="20" cols="80" type="text" id="comments" name="comments" value=""></textarea>
+  <label style="display: block; padding-bottom: 10px" for="comments">Extra comments:</label>
   <br>
-
-  <input type="reset" value="Reset">
-  <input type="submit" value="Submit">
+  <textarea style="margin-left: 40px; background-color: #f0e4d6;
+   font-family: inherit; font-size: inherit;" id="comments" rows="20" cols="80" type="text" name="comments" value="" placeholder="Text input"></textarea>
+  <br>
+  <br>
+  <input id="reset" type="reset" value="Reset Form">
+  <input id="submit" type="submit" value="Submit">
 </form>
+<br>
+<br>
+<br>
 <a href="./lastreport" target="_blank" rel="noopener noreferrer">last report</a>

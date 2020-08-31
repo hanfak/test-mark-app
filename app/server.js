@@ -1,15 +1,10 @@
 const app = require("express")();
 const bodyParser = require('body-parser');
-// TODO fix naming
-const LIKARTS = ['strongly-agree', 'agree', 'neutral', 'disagree', 'strongly-disagree'];
+const properties = require('./properties');
 var path = require('path');
 var fs = require('fs');
 var hbs = require('express-handlebars');
 var Handlebars = require('handlebars');
-var marking_criteria = [
-  {"key": "criteria1", "value": "first statement"},
-  {"key": "criteria2", "value": "second statement"}
-];
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'hbs');
@@ -30,17 +25,24 @@ app.get('/', function(req, res) {
     // TODO use backup of json file to populate form
   res.render('form', {
       post: {
-          statement: marking_criteria,
-          likarts: LIKARTS
+          statement: properties.marking_criteria,
+          likarts: properties.LIKARTS
       }
   });
 });
 
 app.get('/lastreport', function(req, res) {
-    //tODO use handlebars
     // TODO return last saved report in english
-    res.set('Content-Type', 'text/plain');
-    res.sendFile(path.join(__dirname + '/backupJson.txt'));
+    try {
+        var data = fs.readFileSync('backupJson.txt', 'utf8');
+        res.render('lastReport', {
+            post: {
+                lastReport: data
+            }
+        });
+    } catch(e) {
+        console.log('Error:', e.stack);
+    }
 });
 
 app.post('/generate', (req, res) => {

@@ -18,7 +18,6 @@ docker run -d --name test-marker-reporter -p 8231:9999 test-marker-reporter
 docker exec -ti testMarkerReporter sh
 
 ## GET /
-https://stackabuse.com/guide-to-handlebars-templating-engine-for-node/
 Populate field with back up (*)
 
 ## POST /generate
@@ -31,9 +30,11 @@ return backup text
 button to form
 button to generate report
 
-## index.html
-Add some styling (bootstrap)
+## form.html
 positives and negatives text field (*)
+text box for pass or fail generic response (with copy button)
+
+## report.html
 text box for pass or fail generic response (with copy button)
 
 ## Instructions
@@ -54,3 +55,6 @@ push to artifactory
 Trigger docker push to artifactory
 
 ## Docker
+need location to push to
+build image needs this location
+docker push $(IMAGE):latest

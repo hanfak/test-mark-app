@@ -1,8 +1,10 @@
-<h1 class="title">Generated Report:</h1>
-<p id="p1">{{post.report}}</p>
-<button onclick="copyToClipboard('#p1')">Copy report</button>
+<h1 class="title">Last Report</h1>
+
+<p id="p2">{{post.lastReport}}</p>
+
+<button onclick="copyToClipboard('#p2')">Copy report</button>
 <a href="./">Home</a>
- <!-- TODO extract to separate file -->
+<!-- TODO extract to separate file -->
 <script>
   function copyToClipboard(element) {
     var $temp = $("<input>");

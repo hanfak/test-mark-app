@@ -2,13 +2,26 @@
 <head>
     <meta charset="utf-8">
     <title>Report</title>
-    <!-- TODO: have css file -->
+    <!-- TODO: have css file, move all inline css into it -->
     <style>
     ul {
       list-style-type: none;
     }
     ul li{
       display: inline;
+    }
+    #reset, #submit, button{
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 20px;
+      padding: 12px 50px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    body {
+      background-color: #f0ead6;
     }
     </style>
 </head>
@@ -17,5 +30,6 @@
     <div class="container">
         {{{body}}}
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
 </html>
