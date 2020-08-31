@@ -7,25 +7,23 @@ npm run app
 
 ### build docker image
 
-docker build -t testMarkerReporter .
+docker build -t test-marker-reporter .
 
 ### Run docker image
 
-docker run -d --name testMarkerReporter -p 8231:9999 testMarkerReporter
+docker run -d --name test-marker-reporter -p 8231:9999 test-marker-reporter
 
 ### Access container
 
 docker exec -ti testMarkerReporter sh
 
 ## GET /
-Return index.html
-Contains form with submit button, and reset button
+https://stackabuse.com/guide-to-handlebars-templating-engine-for-node/
 Populate field with back up (*)
 
 ## POST /generate
-Returns text of readable assesment
-stores in file (as backup)
-html has copy button
+Returns text of readable assesment report
+report stored in file (as backup)
 Link to pass or fail, return generic response (with copy button)
 
 ## GET /backup
@@ -35,9 +33,7 @@ button to generate report
 
 ## index.html
 Add some styling (bootstrap), text box of appropriate size
-likert scale, using radio buttons
-text box to add user comments
-positives and negatives text field
+positives and negatives text field (*)
 text box for pass or fail generic response (with copy button)
 
 ## Instructions
@@ -55,4 +51,3 @@ build image
 push to artifactory
 
 ## Docker
-
