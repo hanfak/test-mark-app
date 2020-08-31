@@ -1,56 +1,21 @@
+<h1>Fill form while marking</h1>
 <form action="/generate" method="post">
-  <label class="statement">This HTML Likert scale is easy to use.</label>
-  <!-- TODO likert turn into for loop -->
-  <!-- TODO radio buttons should be horizontal not vertical -->
-  <ul class='likert'>
-    <li>
-      <label><input type="radio" name="likert" value="strongly agree">
-      Strongly agree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert" value="agree">
-      Agree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert" value="neutral">
-      Neutral</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert" value="disagree">
-      Disagree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert" value="strongly disagree">
-      Strongly disagree</label>
-    </li>
-  </ul>
-  <label class="statement">Second statement</label>
-  <ul class='likert1'>
-    <li>
-      <label><input type="radio" name="likert1" value="strongly agree">
-      Strongly agree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert1" value="agree">
-      Agree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert1" value="neutral">
-      Neutral</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert1" value="disagree">
-      Disagree</label>
-    </li>
-    <li>
-      <label><input type="radio" name="likert1" value="strongly disagree">
-      Strongly disagree</label>
-    </li>
-  </ul>
-
-  <label for="comments">extra comments:</label><br>
-  <textarea rows="20" cols="50" type="text" id="comments" name="comments" value=""></textarea><br>
+  {{#each post.statement}}
+    <label class="statement">{{inc @index}}: {{this.value}} blahs</label>
+    <ul class={{this.key}}>
+      {{#each ../post.likarts}}
+        <li>
+          <label><input type="radio" name={{../this.key}} value={{this}}>{{replace this}}</label>
+        </li>
+      {{/each}}
+    </ul>
+  {{/each}}
+  <label for="comments">extra comments:</label>
+  <br>
+  <textarea rows="20" cols="80" type="text" id="comments" name="comments" value=""></textarea>
+  <br>
 
   <input type="reset" value="Reset">
   <input type="submit" value="Submit">
 </form>
+<a href="./lastreport" target="_blank" rel="noopener noreferrer">last report</a>

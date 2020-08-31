@@ -32,7 +32,7 @@ button to form
 button to generate report
 
 ## index.html
-Add some styling (bootstrap), text box of appropriate size
+Add some styling (bootstrap)
 positives and negatives text field (*)
 text box for pass or fail generic response (with copy button)
 
@@ -45,9 +45,12 @@ Fill in form, hit submit
 copy when happy and paste in form
 location of last backup is ...
 
-## Teamcity
+## Teamcity (?)
 git trigger
 build image
 push to artifactory
+
+## Scipt
+Trigger docker push to artifactory
 
 ## Docker
