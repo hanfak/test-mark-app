@@ -55,6 +55,8 @@ push to artifactory
 Trigger docker push to artifactory
 
 ## Docker
+Change working directory , copy to there
+
 need location to push to
 build image needs this location
 docker push $(IMAGE):latest
